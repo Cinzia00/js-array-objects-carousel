@@ -2,7 +2,6 @@ img {
     max-width: 100%;
     object-fit: cover;
     aspect-ratio: 16/9;
-    position: relative;
 }
 
 .carosello {
@@ -21,6 +20,7 @@ img {
     position: absolute;
     font-size: 40px;
     color: white;
+    z-index: +1;
 }
 
 .arrow-left {
@@ -37,11 +37,11 @@ img {
 .text {
     position: absolute;
     right: 30px;
-    bottom: 70px;
+    bottom: 80px;
     font-weight: bold;
     color: bisque;
 }
 
 .description {
-    bottom: 40px;
+    bottom: 60px;
 }
