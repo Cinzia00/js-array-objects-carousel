@@ -7,71 +7,56 @@
 
 let slideElement = [
     {
-        title: 'winter',
-        description:'',
+        title: 'Winter',
+        description:'Lorem ipsum dolor sit amet elit. Obcaecati pariatur corrupti aspern ipsum ab libero, aperiam repudiandae modi nobis voluptas!',
         image:'./img1.jpg',
-        
     },
     {
-        title: '',
-        description: '',
+        title: 'Summer',
+        description: 'Lorem ipsum dolor sit amet elit. Obcaecati pariatur corrupti aspern ipsum ab libero, aperiam repudiandae modi nobis voluptas!',
         image:'./img2.jpg',
-        
     },
     {
-        title: '',
-        description: '',
+        title: 'Drops',
+        description: 'Lorem ipsum dolor sit amet  elit. Obcaecati pariatur corrupti aspern ipsum ab libero, aperiam repudiandae modi nobis voluptas!',
         image:'./img3.jpg',
         
     },
     {
-        title: '',
-        description: '',
+        title: 'Spring',
+        description: 'Lorem ipsum dolor sit amet  elit. Obcaecati pariatur corrupti aspern ipsum ab libero, aperiam repudiandae modi nobis voluptas!',
         image:'./img4.jpg',
-        
     },
 ]
-
-
 
 let slideAttiva = 0;
 
 let elementJs = ''
-
+let slide = ''
 
 for (let i = 0; i < slideElement.length; i++) {
-    const currentSlide = slideElement[i]
+    elementJs = slideElement[i]
     const title = slideElement.title
     const description = slideElement.description
     const image = slideElement.image
-    
     let activeClass = ''
     if (i === 0) {
         activeClass = 'active'
     }
-    // let img = `
-    // <div class="slide ${activeClass}">
-    //     <img src="${slideElement[i]}" alt="">
-    // </div>
-    // `
-    for (let chiave in slideElement){
-        let value = slideElement[chiave]
-        // console.log('slideElement.title:', slideElement.title)
-        // console.log('slideElement.description:', slideElement.description)
-        // console.log('slideElement.image:', slideElement.image)    
-        // console.log(value)
-        
-        let img = `
-        <div class="slide ${activeClass}">
-        <img src="${slideElement[i]}" alt="">
-        </div>
-        `
-    }
-    console.log(title, description, image, currentSlide)
-    // elementJs += img
+    
+    let img = `
+    <div class="slide ${activeClass}">
+    <img src="${elementJs.image}" alt="">
+    <p class="text"> ${slideElement[i].title}</p>
+    <p class="text description"> ${slideElement[i].description}</p>
+    </div>
+    `
+
+    slide += img 
+    console.log(title, description, image, elementJs)
 }
 console.log('elemento', elementJs)
-document.getElementById('carosello').innerHTML += elementJs
+document.getElementById('carosello').innerHTML += slide
 
 
 const rightArrowElement = document.getElementById("arrow-right-element");
